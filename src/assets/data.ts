@@ -7,7 +7,7 @@ import EqualizerIcon from "@mui/icons-material/Equalizer";
 import NoteAltIcon from "@mui/icons-material/NoteAlt";
 import PaymentIcon from "@mui/icons-material/Payment";
 // Sidebar Data
-export const SidebarData: any = [
+export const SidebarData = [
   {
     icon: DashboardIcon,
     heading: "Dashboard",
@@ -31,7 +31,7 @@ export const SidebarData: any = [
 ];
 
 // Analytics Cards Data
-export const cardsData: any = [
+export const cardsData = [
   {
     title: "Sales",
     color: {
