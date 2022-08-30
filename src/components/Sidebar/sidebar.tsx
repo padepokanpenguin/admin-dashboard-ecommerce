@@ -2,11 +2,10 @@ import { useState } from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 import style from "./sidebar.module.css";
-import { SidebarData } from "../assets/data";
+import { SidebarData } from "../../assets/data";
 
 export default function Sidebar() {
-  const [selected, setSelected] = useState(0)
-
+  const [selected, setSelected] = useState(0);
 
   return (
     <div className={style.Sidebar}>
@@ -17,7 +16,13 @@ export default function Sidebar() {
 
       <div className={style.Menu}>
         {SidebarData.map((item, index) => (
-          <div key={index} className={selected === index ? `${style.MenuItem} ${style.active}` : style.MenuItem}
+          <div
+            key={index}
+            className={
+              selected === index
+                ? `${style.MenuItem} ${style.active}`
+                : style.MenuItem
+            }
             onClick={() => setSelected(index)}
           >
             <item.icon />
