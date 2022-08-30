@@ -57,21 +57,21 @@ export default function Card({
   );
 }
 
-interface CompactProps {
-  png: React.ComponentType<SvgIconProps>;
-  value: string;
-  barValue: number;
-  title: string;
-  color: ObjectType;
-}
+// interface CompactProps {
+//   png: React.ComponentType<SvgIconProps>;
+//   value: string;
+//   barValue: number;
+//   title: string;
+//   color: ObjectType;
+// }
 
-function CompactCard({ png, value, barValue, title }: CompactProps) {
-  return (
-    <div className={style.CompactCard}>
-      <div className={style.RadialBar}>Chart</div>
-      <div className={style.Detail}>
-        <png />
-      </div>
-    </div>
-  );
-}
+// // function CompactCard({ png, value, barValue, title }: CompactProps) {
+// //   return (
+// //     <div className={style.CompactCard}>
+// //       <div className={style.RadialBar}>Chart</div>
+// //       <div className={style.Detail}>
+// //         <png />
+// //       </div>
+// //     </div>
+// //   );
+// // }
