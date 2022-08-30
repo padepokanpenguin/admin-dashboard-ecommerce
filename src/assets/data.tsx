@@ -40,7 +40,7 @@ export const cardsData = [
     },
     barValue: 70,
     value: "25,970",
-    png: PaymentIcon,
+    png: <PaymentIcon />,
     series: [
       {
         name: "Sales",
@@ -56,7 +56,7 @@ export const cardsData = [
     },
     barValue: 80,
     value: "14,270",
-    png: NoteAltIcon,
+    png: <NoteAltIcon />,
     series: [
       {
         name: "Revenue",
@@ -67,12 +67,13 @@ export const cardsData = [
   {
     title: "Expenses",
     color: {
-      background: "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
+      background:
+        "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
       boxShadow: "0px 10px 20px 0px #F9D59B",
     },
     barValue: 60,
     value: "4,270",
-    png: NoteAltIcon,
+    png: <NoteAltIcon />,
     series: [
       {
         name: "Expenses",

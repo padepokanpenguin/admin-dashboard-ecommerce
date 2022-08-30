@@ -1,4 +1,4 @@
-import { cardsData } from "../../assets/data";
+import { cardsData } from "../../../assets/data";
 import style from "./Cards.module.css";
 import Card from "../Card/Card";
 
