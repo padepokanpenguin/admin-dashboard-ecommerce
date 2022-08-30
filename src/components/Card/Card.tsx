@@ -1,28 +1,27 @@
 import React, { useState } from "react";
 import { motion, AnimateSharedLayout } from "framer-motion";
-import { ObjectType } from "typescript";
 import { SvgIconProps } from "@mui/material";
 
 import style from "./Card.module.css";
 import { jsx } from "@emotion/react";
 
+type ColorKeys = "background" | "boxShadow";
+
+interface SingleSeries {
+  name: string;
+  data: number[];
+}
 interface Props {
   title: string;
-  color: ObjectType;
+  color: Record<ColorKeys, string>;
   barValue: number;
   value: string;
   png: React.ComponentType<SvgIconProps>;
-  series: ObjectType;
+  series: SingleSeries[];
 }
 
-export default function Card({
-  title,
-  color,
-  barValue,
-  value,
-  png,
-  series,
-}: Props) {
+export default function Card({ title, color, barValue, value, png, series }: Props) {
+  const Png = png;
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -33,11 +32,11 @@ export default function Card({
         <motion.div
           className="CompactCard"
           style={{
-            background: color.backGround,
+            background: color.background,
             boxShadow: color.boxShadow,
           }}
           layoutId="expandableCard"
-          onClick={setExpanded}
+          onClick={() => setExpanded(!expanded)}
         >
           <div className="radialBar">
             {/* <CircularProgressbar
