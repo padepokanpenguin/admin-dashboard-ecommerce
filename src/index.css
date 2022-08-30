@@ -4,11 +4,11 @@
   --black: #242d49;
   --gray: #788097;
   --purple: linear-gradient(180deg, #bb67ff 0%, #c484f3 100%);
-  --pink: #ff919d;
+  --blue: #3b618c;
   --glass: rgba(201, 216, 232, 1);
   --boxShadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
-  --activeItem: #5A87B9;
+  --activeItem: #5a87b9;
 }
 
 body {

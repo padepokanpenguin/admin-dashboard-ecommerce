@@ -45,6 +45,21 @@
 
 .active {
   background: var(--activeItem);
-  margin-left: 0;
+  margin-left: 1.5px;
   border-radius: 0.7rem;
+  padding: 5px;
+  transition: all 300ms ease;
+}
+
+.active::before {
+  content: "";
+  width: 8px;
+  height: 100%;
+  background: var(--blue);
+}
+
+.Menu .MenuItem:last-child {
+  position: absolute;
+  bottom: 2.3rem;
+  width: 100%;
 }
