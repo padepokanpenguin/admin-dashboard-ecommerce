@@ -9,23 +9,23 @@ import PaymentIcon from "@mui/icons-material/Payment";
 // Sidebar Data
 export const SidebarData = [
   {
-    icon: DashboardIcon,
+    icon: <DashboardIcon />,
     heading: "Dashboard",
   },
   {
-    icon: AssignmentTurnedInIcon,
+    icon: <AssignmentTurnedInIcon />,
     heading: "Orders",
   },
   {
-    icon: PersonIcon,
+    icon: <PersonIcon />,
     heading: "Customers",
   },
   {
-    icon: InventoryIcon,
+    icon: <InventoryIcon />,
     heading: "Products",
   },
   {
-    icon: EqualizerIcon,
+    icon: <EqualizerIcon />,
     heading: "Analytics",
   },
 ];

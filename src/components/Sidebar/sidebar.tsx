@@ -18,14 +18,10 @@ export default function Sidebar() {
         {SidebarData.map((item, index) => (
           <div
             key={index}
-            className={
-              selected === index
-                ? `${style.MenuItem} ${style.active}`
-                : style.MenuItem
-            }
+            className={selected === index ? `${style.MenuItem} ${style.active}` : style.MenuItem}
             onClick={() => setSelected(index)}
           >
-            <item.icon />
+            {item.icon}
             <span>{item.heading}</span>
           </div>
         ))}

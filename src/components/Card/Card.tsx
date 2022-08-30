@@ -1,26 +1,22 @@
 import React, { useState } from "react";
 import { motion, AnimateSharedLayout } from "framer-motion";
-import { SvgIconProps } from "@mui/material";
 
 import style from "./Card.module.css";
-
-type ColorKeys = "background" | "boxShadow";
-
-interface SingleSeries {
-  name: string;
-  data: number[];
-}
-interface Props {
+interface BaseCard {
   title: string;
-  color: Record<ColorKeys, string>;
+  color: Record<"background" | "boxShadow", string>;
   barValue: number;
   value: string;
-  png: React.ComponentType<SvgIconProps>;
-  series: SingleSeries[];
+  png: any;
+}
+interface CardProps extends BaseCard {
+  series: {
+    name: string;
+    data: number[];
+  }[];
 }
 
-export default function Card({ title, color, barValue, value, png, series }: Props) {
-  const Png = png;
+export default function Card({ title, color, barValue, value, png, series }: CardProps) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -45,7 +41,7 @@ export default function Card({ title, color, barValue, value, png, series }: Pro
             <span>{title}</span>
           </div>
           <div className={style.Detail}>
-            <Png />
+            {png}
             <span>${value}</span>
             <span>Last 24 hours</span>
           </div>
@@ -55,21 +51,11 @@ export default function Card({ title, color, barValue, value, png, series }: Pro
   );
 }
 
-// interface CompactProps {
-//   png: React.ComponentType<SvgIconProps>;
-//   value: string;
-//   barValue: number;
-//   title: string;
-//   color: ObjectType;
-// }
-
-// // function CompactCard({ png, value, barValue, title }: CompactProps) {
-// //   return (
-// //     <div className={style.CompactCard}>
-// //       <div className={style.RadialBar}>Chart</div>
-// //       <div className={style.Detail}>
-// //         <png />
-// //       </div>
-// //     </div>
-// //   );
-// // }
+export function CompactCard({ png, value, barValue, title }: BaseCard) {
+  return (
+    <div className={style.CompactCard}>
+      <div className={style.RadialBar}>Chart</div>
+      <div className={style.Detail}>{png}</div>
+    </div>
+  );
+}
