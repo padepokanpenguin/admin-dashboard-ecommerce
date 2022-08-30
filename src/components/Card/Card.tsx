@@ -4,7 +4,6 @@ import { ObjectType } from "typescript";
 import { SvgIconProps } from "@mui/material";
 
 import style from "./Card.module.css";
-import { jsx } from "@emotion/react";
 
 interface Props {
   title: string;
@@ -31,7 +30,7 @@ export default function Card({
         "Expanded"
       ) : (
         <motion.div
-          className="CompactCard"
+          className={style.CompactCard}
           style={{
             background: color.backGround,
             boxShadow: color.boxShadow,
@@ -39,14 +38,14 @@ export default function Card({
           layoutId="expandableCard"
           onClick={setExpanded}
         >
-          <div className="radialBar">
+          <div className={style.RadialBar}>
             {/* <CircularProgressbar
               value={barValue}
               text={`${barValue}%`}
             /> */}
             <span>{title}</span>
           </div>
-          <div className="detail">
+          <div className={style.Detail}>
             <Png />
             <span>${value}</span>
             <span>Last 24 hours</span>

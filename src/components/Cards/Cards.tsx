@@ -2,6 +2,8 @@ import React from "react";
 import { cardsData } from "../../assets/data";
 import style from "./Cards.module.css";
 
+import Card from "../Card/Card";
+
 export default function Card() {
   return (
     <div className={style.Cards}>
