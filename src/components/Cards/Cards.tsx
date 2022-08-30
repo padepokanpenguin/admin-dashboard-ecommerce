@@ -8,7 +8,7 @@ export default function Card() {
       {cardsData.map((card, id) => (
         <div className={style.ParentContainer}>
           <Card
-            title={cart.title}
+            title={card.title}
             color={card.color}
             barValue={card.barValue}
             value={card.value}
