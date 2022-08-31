@@ -2,7 +2,7 @@
   display: flex;
   flex: 1;
   height: 7rem !important;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   color: white;
   padding: 1rem;
   position: relative;
@@ -21,25 +21,6 @@
   gap: 1rem;
 }
 
-.CircularProgressbar {
-  width: 4rem !important;
-  overflow: visible;
-}
-
-.CircularProgressbar-path {
-  stroke: white !important;
-  stroke-width: 12px !important;
-  filter: drop-shadow(2px 4px 6px white);
-}
-
-.CircularProgressbar-trail {
-  display: none;
-}
-
-.CircularProgressbar-text {
-  fill: white !important;
-}
-
 .RadialBar > span {
   font-size: 17px;
   font-weight: bold;
@@ -53,4 +34,11 @@
   justify-content: space-between;
 }
 
+.Detail > span:nth-child(2) {
+  font-size: 22px;
+  font-weight: bold;
+}
 
+.Detail > span:nth-child(3) {
+  font-size: 12px;
+}

@@ -55,10 +55,12 @@ export function CompactCard({ png, value, barValue, title, color }: BaseCard) {
       }}>
       <div className={style.RadialBar}>
         <CircularProgressbar value={barValue} text={`${barValue}%`} />
+        <span>{title}</span>
       </div>
+
       <div className={style.Detail}>
         {png}
-        <span>{value}</span>
+        <span>IDR {value}</span>
         <span>Last 24 hours</span>
       </div>
     </div>
