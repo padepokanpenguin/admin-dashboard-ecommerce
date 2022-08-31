@@ -9,7 +9,7 @@ import style from "./Card.module.css";
 interface BaseCard {
   title: string;
   color: Record<"background" | "boxShadow", string>;
-  barValue: number;
+  barValue?: number;
   value?: string;
   png?: any;
   setExpanded?: () => void;
@@ -20,7 +20,7 @@ interface CardProps extends BaseCard {
     data: number[];
   }[];
 }
- 
+
 export default function Card({
   title,
   color,
@@ -29,7 +29,7 @@ export default function Card({
   png,
   series,
 }: CardProps) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <AnimateSharedLayout>
@@ -72,7 +72,7 @@ function CompactCard({
       layoutId="expandableCard"
     >
       <div className={style.RadialBar}>
-        <CircularProgressbar value={barValue} text={`${barValue}%`} />
+        <CircularProgressbar value={barValue || 0} text={`${barValue || 0}%`} />
         <span>{title}</span>
       </div>
 
@@ -121,9 +121,9 @@ function ExpandedCard({ color, setExpanded, title, series }: CardProps) {
               colors: ["#fff"],
               type: "gradient",
             },
-            // datalabels: {
-            //   enabled: false,
-            // },
+            dataLabels: {
+              enabled: false,
+            },
             stroke: {
               curve: "smooth",
               colors: ["white"],
