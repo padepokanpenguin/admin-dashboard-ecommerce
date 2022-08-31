@@ -4,8 +4,9 @@ import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import PersonIcon from "@mui/icons-material/Person";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
-import NoteAltIcon from "@mui/icons-material/NoteAlt";
-import PaymentIcon from "@mui/icons-material/Payment";
+import EventNoteIcon from "@mui/icons-material/EventNote";
+import SellIcon from "@mui/icons-material/Sell";
+import PaymentIcon from "@mui/icons-material/Payments"
 // Sidebar Data
 export const SidebarData = [
   {
@@ -40,7 +41,7 @@ export const cardsData = [
     },
     barValue: 70,
     value: "25,970",
-    png: <PaymentIcon />,
+    png: <SellIcon />,
     series: [
       {
         name: "Sales",
@@ -56,7 +57,7 @@ export const cardsData = [
     },
     barValue: 80,
     value: "14,270",
-    png: <NoteAltIcon />,
+    png: <PaymentIcon />,
     series: [
       {
         name: "Revenue",
@@ -73,7 +74,7 @@ export const cardsData = [
     },
     barValue: 60,
     value: "4,270",
-    png: <NoteAltIcon />,
+    png: <EventNoteIcon />,
     series: [
       {
         name: "Expenses",
