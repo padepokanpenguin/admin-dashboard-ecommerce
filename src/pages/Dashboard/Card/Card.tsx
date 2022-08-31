@@ -3,7 +3,7 @@ import { motion, AnimateSharedLayout } from "framer-motion";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import CloseSharpIcon from "@mui/icons-material/CloseSharp";
-
+import Chart from "react-apexcharts";
 import style from "./Card.module.css";
 
 interface BaseCard {
@@ -20,7 +20,7 @@ interface CardProps extends BaseCard {
     data: number[];
   }[];
 }
-
+ 
 export default function Card({
   title,
   color,
@@ -69,6 +69,7 @@ function CompactCard({
         boxShadow: color.boxShadow,
       }}
       onClick={setExpanded}
+      layoutId="expandableCard"
     >
       <div className={style.RadialBar}>
         <CircularProgressbar value={barValue} text={`${barValue}%`} />
@@ -84,21 +85,73 @@ function CompactCard({
   );
 }
 
-function ExpandedCard({ color, setExpanded, title }: CardProps) {
+function ExpandedCard({ color, setExpanded, title, series }: CardProps) {
   return (
-    <div
+    <motion.div
       className={style.ExpandedCard}
       style={{
         background: color.background,
         boxShadow: color.boxShadow,
       }}
+      layoutId="expandableCard"
     >
       <div>
         <CloseSharpIcon onClick={setExpanded} />
       </div>
       <span>{title}</span>
-      <div className={style.ChartContainer}>Chart</div>
+      <div className={style.ChartContainer}>
+        <Chart
+          series={series}
+          type="area"
+          options={{
+            chart: {
+              type: "area",
+              height: "auto",
+            },
+            // dropShadow: {
+            //   enabled: false,
+            //   enableOnSeries: undefined,
+            //   top: 0,
+            //   left: 0,
+            //   blur: 3,
+            //   color: "#000",
+            //   opacity: 0.35,
+            // },
+            fill: {
+              colors: ["#fff"],
+              type: "gradient",
+            },
+            // datalabels: {
+            //   enabled: false,
+            // },
+            stroke: {
+              curve: "smooth",
+              colors: ["white"],
+            },
+            tooltip: {
+              x: {
+                format: "dd/MM/yy HH:mm",
+              },
+            },
+            grid: {
+              show: true,
+            },
+            xaxis: {
+              type: "datetime",
+              categories: [
+                "2018-09-19T00:00:00.000Z",
+                "2018-09-19T01:30:00.000Z",
+                "2018-09-19T02:30:00.000Z",
+                "2018-09-19T03:30:00.000Z",
+                "2018-09-19T04:30:00.000Z",
+                "2018-09-19T05:30:00.000Z",
+                "2018-09-19T06:30:00.000Z",
+              ],
+            },
+          }}
+        />
+      </div>
       <span>last 24 hours</span>
-    </div>
+    </motion.div>
   );
 }
