@@ -38,6 +38,7 @@ export default function Card({
           color={color}
           setExpanded={() => setExpanded(false)}
           title={title}
+          series={series}
         />
       ) : (
         <CompactCard
@@ -95,7 +96,7 @@ function ExpandedCard({ color, setExpanded, title, series }: CardProps) {
       }}
       layoutId="expandableCard"
     >
-      <div>
+      <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
         <CloseSharpIcon onClick={setExpanded} />
       </div>
       <span>{title}</span>
@@ -108,19 +109,12 @@ function ExpandedCard({ color, setExpanded, title, series }: CardProps) {
               type: "area",
               height: "auto",
             },
-            // dropShadow: {
-            //   enabled: false,
-            //   enableOnSeries: undefined,
-            //   top: 0,
-            //   left: 0,
-            //   blur: 3,
-            //   color: "#000",
-            //   opacity: 0.35,
-            // },
+
             fill: {
               colors: ["#fff"],
               type: "gradient",
             },
+
             dataLabels: {
               enabled: false,
             },

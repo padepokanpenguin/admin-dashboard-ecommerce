@@ -6,7 +6,7 @@ export default function Cards() {
   return (
     <div className={style.Cards}>
       {cardsData.map((card, id) => (
-        <div className={style.ParentContainer}>
+        <div key={id} className={style.ParentContainer}>
           <Card {...card} />
         </div>
       ))}
