@@ -85,7 +85,7 @@ export const cardsData = [
 ];
 
 // Recent Update Card Data
-export const UpdatesData: any = [
+export const UpdatesData = [
   {
     img: "/assets/img/img1.png",
     name: "Andrew Thomas",
