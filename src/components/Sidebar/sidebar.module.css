@@ -65,3 +65,13 @@
   bottom: -20rem;
   width: 100%;
 }
+
+@media screen and (max-width: 1200px) {
+  .MenuItem > span {
+    display: none;
+  }
+
+  .Logo {
+    display: none;
+  }
+}

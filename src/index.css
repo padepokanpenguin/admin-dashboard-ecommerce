@@ -66,3 +66,10 @@ body {
 .MuiTableRow-root.MuiTableRow-head > * {
   font-weight: bold;
 }
+
+@media screen and (max-width: 1200px) {
+  .AppGlass {
+    grid-template-columns: 10% auto;
+    overflow-y: scroll;
+  }
+}

@@ -6,3 +6,14 @@
 .ParentContainer {
   width: 100%;
 }
+
+@media screen and (max-width: 1200px) {
+  .Cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .ParentContainer {
+    height: 9rem;
+  }
+}
