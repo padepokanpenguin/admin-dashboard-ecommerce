@@ -1,5 +1,7 @@
 .MainDashboard {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 2rem;
 }

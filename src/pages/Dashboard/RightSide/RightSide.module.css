@@ -1,8 +1,9 @@
 .RightSide {
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    justify-content: space-evenly;
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  justify-content: space-evenly;
+  gap: 4rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}

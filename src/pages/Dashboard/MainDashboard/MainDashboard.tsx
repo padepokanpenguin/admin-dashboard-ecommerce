@@ -7,6 +7,7 @@ export default function MainDashboard() {
     <div className={style.MainDashboard}>
       <h1>Dashboard</h1>
       <Cards />
+
       <Table />
     </div>
   );

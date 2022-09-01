@@ -1,6 +1,6 @@
 import { useState } from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
-
+import { Link } from "react-router-dom";
 import style from "./sidebar.module.css";
 import { SidebarData } from "../../assets/data";
 
@@ -16,18 +16,19 @@ export default function Sidebar() {
 
       <div className={style.Menu}>
         {SidebarData.map((item, index) => (
-          <div
+          <Link
             key={index}
             className={
               selected === index
                 ? `${style.MenuItem} ${style.active}`
                 : style.MenuItem
             }
+            to={item.heading === "Dashboard" ? "/" : item.heading.toLowerCase()}
             onClick={() => setSelected(index)}
           >
             {item.icon}
             <span>{item.heading}</span>
-          </div>
+          </Link>
         ))}
         <div className={style.MenuItem}>
           <LogoutIcon />
