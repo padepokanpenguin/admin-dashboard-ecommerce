@@ -75,3 +75,41 @@
     display: none;
   }
 }
+
+.Bars {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .Sidebar {
+    position: fixed;
+    z-index: 9;
+    background: #b4d0f5;
+    width: 55%;
+    padding-right: 1rem;
+    height: 100%;
+  }
+
+  .MenuItem > span {
+    display: block;
+  }
+
+  .Logo {
+    display: flex !important;
+  }
+
+  .Menu .MenuItem:last-child {
+    position: relative;
+    margin-top: -6rem;
+  }
+
+  .Bars {
+    display: flex;
+    position: fixed;
+    top: 2rem;
+    z-index: 9;
+    background: #b4d0f5;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
