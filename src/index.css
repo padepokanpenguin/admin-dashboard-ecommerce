@@ -36,7 +36,8 @@ body {
   border-radius: 2rem;
   background: var(--glass);
   overflow: hidden;
-  grid-template-columns: 13rem auto 20rem;
+  grid-template-columns: 12rem auto 21rem;
+  gap: 10px;
 }
 
 .CircularProgressbar {
@@ -56,4 +57,12 @@ body {
 
 .CircularProgressbar-text {
   fill: white !important;
+}
+
+.MuiTableRow-root > * {
+  padding: 10px;
+}
+
+.MuiTableRow-root.MuiTableRow-head > * {
+  font-weight: bold;
 }

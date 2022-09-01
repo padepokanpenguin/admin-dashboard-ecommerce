@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimateSharedLayout } from "framer-motion";
+import { motion } from "framer-motion";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import CloseSharpIcon from "@mui/icons-material/CloseSharp";
@@ -32,7 +32,7 @@ export default function Card({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <AnimateSharedLayout>
+    <motion.div>
       {expanded ? (
         <ExpandedCard
           color={color}
@@ -50,7 +50,7 @@ export default function Card({
           setExpanded={() => setExpanded(true)}
         />
       )}
-    </AnimateSharedLayout>
+    </motion.div>
   );
 }
 
@@ -70,7 +70,6 @@ function CompactCard({
         boxShadow: color.boxShadow,
       }}
       onClick={setExpanded}
-      layoutId="expandableCard"
     >
       <div className={style.RadialBar}>
         <CircularProgressbar value={barValue || 0} text={`${barValue || 0}%`} />
@@ -94,7 +93,6 @@ function ExpandedCard({ color, setExpanded, title, series }: CardProps) {
         background: color.background,
         boxShadow: color.boxShadow,
       }}
-      layoutId="expandableCard"
     >
       <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
         <CloseSharpIcon onClick={setExpanded} />
